@@ -14,12 +14,12 @@ async function getData() {
 export default async function Home() {
   const pokemons = await getData();
 
-  console.log(pokemons);
-  
+  // console.log(pokemons);
+
 
   return (
     <main className="bg-cyan-950 min-h-screen">
-      <PokemonList pokemons={pokemons} />
+      <PokemonList pokemons={ pokemons } />
     </main>
   );
 }

@@ -6,7 +6,8 @@ import { useRouter } from 'next/navigation';
 import { Pokemon } from '@/@types/pokemon';
 import Image from 'next/image';
 
-import dracaufeu from '../../../../public/img.jpg';
+import dracaufeu from '../../../assets/1200px-Dracaufeu-RFVF.png';
+import big_img from '../../../assets/big_img.jpg'
 
 type Slug = `${number}-${string}`;
 
@@ -27,30 +28,33 @@ async function getData(id: string) {
 }
 
 export default function Single({ params }: SingleProps) {
+
   const router = useRouter();
 
   // console.log(params.slug);
   const [id] = params.slug.split('-');
 
   const pokemon = use(getData(id));
+  console.log(pokemon.sprites.gmax);
 
   return (
     <main className='bg-cyan-950 min-h-screen'>
       <h1 className='font-bold text-cyan-400 text-4xl p-12'>
-        {pokemon.name.fr}
+        { pokemon.name.fr }
       </h1>
 
-      <button type='button' onClick={() => router.back()}>
+      <button type='button' onClick={ () => router.back() }>
         ← Accueil
       </button>
 
       <Image
-        src={dracaufeu}
-        alt={pokemon.name.fr}
-        // blurDataURL="data:..." automatically provided
-        width={6000}
-        height={4000}
-        placeholder='blur'
+        // src={ big_img }
+        src={ pokemon.sprites.regular }
+        alt={ pokemon.name.fr }
+        // blurDataURL="data:..." automatique si local
+        width={ 6000 }
+        height={ 4000 }
+      // placeholder='blur'
       />
     </main>
   );

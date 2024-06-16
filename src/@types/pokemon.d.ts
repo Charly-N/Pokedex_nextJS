@@ -40,12 +40,12 @@ export interface Resistance {
 }
 
 export interface Pre {
-  pokedexId: number
+  pokedex_id: number
   name: string
 }
 
 export interface Next {
-  pokedexId: number
+  pokedex_id: number
   name: string
   condition: string
 }
@@ -67,7 +67,7 @@ export interface Sexe {
 }
 
 export interface Pokemon {
-  pokedexId: number
+  pokedex_id: number
   generation: number
   category: string
   name: Name
