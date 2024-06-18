@@ -51,11 +51,13 @@ export default function Single({ params }: SingleProps) {
         // src={ big_img }
         src={ pokemon.sprites.regular }
         alt={ pokemon.name.fr }
-        // blurDataURL="data:..." automatique si local
         width={ 6000 }
         height={ 4000 }
+      // blurDataURL={ "data:https://img.freepik.com/photos-premium/image-floue-rue-image-floue-rue-arbres_204916-275.jpg" }
+      // automatique si local
       // placeholder='blur'
       />
+      <p>TEXTEEEEEEEE</p>
     </main>
   );
 }
